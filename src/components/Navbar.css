@@ -136,7 +136,7 @@
     border: none;
     cursor: pointer;
     padding: var(--space-sm);
-    z-index: 1001;
+    z-index: 10001;
     margin: 0;
     align-items: center;
     justify-content: center;
@@ -232,11 +232,13 @@
         transition: right var(--duration-slow) var(--ease-elegant);
         opacity: 1 !important;
         pointer-events: auto !important;
-        z-index: 1000;
+        z-index: 10000;
     }
 
     .navbar__menu--open {
-        right: 0;
+        right: 0 !important;
+        pointer-events: auto !important;
+        visibility: visible !important;
     }
 
     .navbar__menu li {
@@ -274,6 +276,9 @@
 
     .navbar__menu {
         width: 100%;
-        right: -100%;
+    }
+    
+    .navbar__menu--open {
+        right: 0 !important;
     }
 }

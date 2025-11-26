@@ -40,6 +40,7 @@ const Navbar = () => {
 
     const closeMenu = () => {
         setIsMenuOpen(false);
+        document.body.style.overflow = '';
     };
 
     const handleMouseEnter = () => {
@@ -54,13 +55,19 @@ const Navbar = () => {
         }
     };
 
-    const handleHamburgerClick = () => {
-        if (window.innerWidth > 1024 && isScrolled) {
-            // On desktop when scrolled, toggle expansion
+    const handleHamburgerClick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const isMobile = window.innerWidth <= 1024;
+        
+        if (isMobile) {
+            const newState = !isMenuOpen;
+            setIsMenuOpen(newState);
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = newState ? 'hidden' : '';
+        } else if (isScrolled) {
             setIsDesktopExpanded(!isDesktopExpanded);
-        } else {
-            // On mobile or when not scrolled, toggle mobile menu
-            toggleMenu();
         }
     };
 
