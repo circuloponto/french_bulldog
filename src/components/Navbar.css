@@ -198,13 +198,24 @@
 
 /* Mobile menu - activate at 1024px and below */
 @media (max-width: 1024px) {
+    .navbar--scrolled {
+        max-width: 100%;
+        margin: 0;
+        border-radius: 0;
+        padding: var(--space-md) 0;
+    }
+
     .navbar__hamburger {
         display: flex;
         opacity: 1 !important;
+        pointer-events: auto !important;
+        position: relative !important;
     }
 
     .navbar__logo {
         opacity: 1 !important;
+        position: relative !important;
+        pointer-events: auto !important;
     }
 
     .navbar__menu {
@@ -221,6 +232,7 @@
         transition: right var(--duration-slow) var(--ease-elegant);
         opacity: 1 !important;
         pointer-events: auto !important;
+        z-index: 1000;
     }
 
     .navbar__menu--open {
