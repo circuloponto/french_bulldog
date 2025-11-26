@@ -1,0 +1,98 @@
+.fun-facts {
+    background: var(--color-cream);
+    position: relative;
+}
+
+.fun-facts__header {
+    text-align: center;
+    margin-bottom: var(--space-5xl);
+}
+
+.fun-facts__subtitle {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-champagne);
+    margin-bottom: var(--space-md);
+}
+
+.fun-facts__title {
+    font-size: var(--font-size-5xl);
+    font-weight: 300;
+    color: var(--color-black);
+    margin-bottom: var(--space-lg);
+}
+
+.fun-facts__accent {
+    width: 60px;
+    height: 1px;
+    background: var(--color-champagne);
+    margin: var(--space-xl) auto;
+}
+
+.fun-facts__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-3xl);
+}
+
+.characteristic-card {
+    padding: var(--space-2xl);
+    background: var(--color-white);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--duration-normal) var(--ease-elegant);
+}
+
+.characteristic-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    border-color: var(--color-champagne);
+}
+
+.characteristic-card__number {
+    font-family: var(--font-display);
+    font-size: var(--font-size-3xl);
+    font-weight: 300;
+    color: var(--color-champagne);
+    margin-bottom: var(--space-md);
+    line-height: 1;
+}
+
+.characteristic-card__title {
+    font-family: var(--font-display);
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    color: var(--color-black);
+    margin-bottom: var(--space-md);
+}
+
+.characteristic-card__description {
+    font-size: var(--font-size-base);
+    color: var(--color-gray);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.characteristic-card .word-reveal {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
+
+.characteristic-card .word-reveal__inner {
+    display: inline-block;
+}
+
+@media (max-width: 768px) {
+    .fun-facts__grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .fun-facts__title {
+        font-size: var(--font-size-4xl);
+    }
+}

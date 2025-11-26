@@ -1,0 +1,76 @@
+.magnetic-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md) var(--space-2xl);
+    font-family: var(--font-sans);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-black);
+    background: transparent;
+    border: 1px solid var(--color-black);
+    cursor: pointer;
+    overflow: hidden;
+    text-decoration: none;
+    will-change: transform;
+}
+
+.magnetic-btn__text {
+    position: relative;
+    z-index: 2;
+    transition: color 0.4s var(--ease-elegant);
+    will-change: transform;
+}
+
+.magnetic-btn__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-black);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.5s var(--ease-elegant);
+    z-index: 1;
+}
+
+.magnetic-btn:hover .magnetic-btn__bg {
+    transform: scaleY(1);
+    transform-origin: top;
+}
+
+.magnetic-btn:hover .magnetic-btn__text {
+    color: var(--color-white);
+}
+
+/* Gold variant */
+.magnetic-btn--gold {
+    border-color: var(--color-champagne);
+    color: var(--color-champagne);
+}
+
+.magnetic-btn--gold .magnetic-btn__bg {
+    background: var(--color-champagne);
+}
+
+.magnetic-btn--gold:hover .magnetic-btn__text {
+    color: var(--color-black);
+}
+
+/* Light variant for dark backgrounds */
+.magnetic-btn--light {
+    border-color: var(--color-white);
+    color: var(--color-white);
+}
+
+.magnetic-btn--light .magnetic-btn__bg {
+    background: var(--color-white);
+}
+
+.magnetic-btn--light:hover .magnetic-btn__text {
+    color: var(--color-black);
+}

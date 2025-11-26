@@ -1,0 +1,281 @@
+:root {
+  /* Sophisticated French Palette */
+  --color-champagne: #D4AF37;
+  --color-gold: #B8860B;
+  --color-black: #0A0A0A;
+  --color-charcoal: #1A1A1A;
+  --color-gray: #3A3A3A;
+  --color-gray-light: #6A6A6A;
+  --color-gray-lighter: #9A9A9A;
+  --color-cream: #FAF7F2;
+  --color-white: #FFFFFF;
+  --color-beige: #E8E3D6;
+
+  /* Typography - Elegant Serifs */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Cormorant', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, sans-serif;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1.125rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+  --font-size-4xl: 3.5rem;
+  --font-size-5xl: 4.5rem;
+  --font-size-6xl: 6rem;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* Border Radius - Minimal */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  /* Shadows - Subtle */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Animation */
+  --ease-elegant: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --duration-fast: 200ms;
+  --duration-normal: 400ms;
+  --duration-slow: 600ms;
+
+  /* Container */
+  --container-max: 1200px;
+  --container-padding: var(--space-2xl);
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.8;
+  color: var(--color-charcoal);
+  background-color: var(--color-cream);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+  color: var(--color-black);
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--font-size-6xl);
+  font-weight: 300;
+}
+
+h2 {
+  font-size: var(--font-size-5xl);
+  font-weight: 300;
+}
+
+h3 {
+  font-size: var(--font-size-4xl);
+}
+
+h4 {
+  font-size: var(--font-size-3xl);
+}
+
+h5 {
+  font-size: var(--font-size-2xl);
+}
+
+h6 {
+  font-size: var(--font-size-xl);
+}
+
+p {
+  margin-bottom: var(--space-lg);
+  line-height: 1.9;
+  color: var(--color-gray);
+}
+
+a {
+  color: var(--color-black);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-elegant);
+}
+
+a:hover {
+  color: var(--color-champagne);
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Accent Line */
+.accent-line {
+  width: 60px;
+  height: 1px;
+  background: var(--color-champagne);
+  margin: var(--space-xl) 0;
+}
+
+.accent-line--center {
+  margin: var(--space-xl) auto;
+}
+
+/* Section */
+.section {
+  padding: var(--space-5xl) 0;
+}
+
+/* Button - Minimal */
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-2xl);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--color-black);
+  background: transparent;
+  color: var(--color-black);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-elegant);
+}
+
+.btn:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn--gold {
+  border-color: var(--color-champagne);
+  color: var(--color-champagne);
+}
+
+.btn--gold:hover {
+  background: var(--color-champagne);
+  color: var(--color-black);
+}
+
+/* Card - Minimal */
+.card {
+  background: var(--color-white);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--duration-normal) var(--ease-elegant);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+  :root {
+    --font-size-6xl: 4.5rem;
+    --font-size-5xl: 3.5rem;
+    --font-size-4xl: 2.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-6xl: 3rem;
+    --font-size-5xl: 2.5rem;
+    --font-size-4xl: 2rem;
+    --font-size-base: 1rem;
+    --space-5xl: 4rem;
+    --container-padding: var(--space-lg);
+  }
+}
+
+/* Custom Scrollbar - Elegant Champagne Gold */
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-champagne), var(--color-gold));
+  border-radius: 6px;
+  border: 2px solid var(--color-cream);
+  transition: background var(--duration-normal);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-champagne);
+  border: 2px solid rgba(212, 175, 55, 0.2);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: var(--color-gold);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-champagne) var(--color-cream);
+}
+
+/* Smooth scrollbar appearance on all browsers */
+html {
+  scrollbar-gutter: stable;
+}
