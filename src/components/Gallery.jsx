@@ -21,18 +21,22 @@ const Gallery = () => {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Header moves up and shrinks to fit above images
-            gsap.to(headerRef.current, {
-                y: -80,
-                scale: 0.6,
-                opacity: 1,
-                scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: 'top 70%',
-                    end: 'top 5%',
-                    scrub: 1.5,
-                },
-            });
+            // Header animation only on desktop (not mobile)
+            const isMobile = window.innerWidth <= 768;
+            
+            if (!isMobile) {
+                gsap.to(headerRef.current, {
+                    y: -80,
+                    scale: 0.6,
+                    opacity: 1,
+                    scrollTrigger: {
+                        trigger: sectionRef.current,
+                        start: 'top 70%',
+                        end: 'top 5%',
+                        scrub: 1.5,
+                    },
+                });
+            }
 
             // Horizontal scroll on vertical scroll
             const track = trackRef.current;
